@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'List of Comics')
+@section('title', 'Comic List')
 @section('content')
 <div class="container">
     <table class="table table-striped">

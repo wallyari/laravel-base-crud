@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Welcome')
+@section('title', 'Homepage')
 
 @section('content')
 <div class="container">
