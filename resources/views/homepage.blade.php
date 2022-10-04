@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    Welcome
+<h1>Welcome</h1>
     
 </div>
     

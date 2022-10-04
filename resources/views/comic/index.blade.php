@@ -3,6 +3,8 @@
 @section('title', 'Comic List')
 @section('content')
 <div class="container">
+    <a href="{{route('comics.create')}}" class="btn btn-primary">Add Comics</a>
+
     <table class="table table-striped">
         <thead>
         <tr>
