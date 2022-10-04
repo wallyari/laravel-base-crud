@@ -48,6 +48,9 @@ class ComicController extends Controller
         $newComic->save();
 
         return redirect()->route('comics.index');
+        
+        //$new Comic-> fill
+        // *Specificare il valore di $fillable nel model,che accettera i parametri nel model.
     }
 
     /**
@@ -59,7 +62,10 @@ class ComicController extends Controller
     public function show($id)
     {
         $comic = Comic::find($id);
+        if ($comic){
         return view ('comic.show', compact('comic'));
+    }
+    abort(404);
     }
 
     /**

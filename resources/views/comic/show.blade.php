@@ -11,6 +11,7 @@
   <div><strong>Series:</strong> {{$comic->series}}</div>
   <div><strong>Sale Date:</strong> {{$comic->sale_date}}</div>
   <div><strong>Tipe:</strong> {{$comic->type}}</div>
+  <a class="btn btn-primary" href="{{route('comics.index', ['comic'=>$comic->id])}}">ALL COMICS</a>
 
 </div>
     
