@@ -18,7 +18,12 @@
         
         <div class="mb-3">
             <label for="series" class="form-label">Series</label>
-            <input type="series" class="form-control" id="series" name="series"/>
+            <input type="series" class="form-control" id="thumb" name="series"/>
+        </div>
+        
+        <div class="mb-3">
+            <label for="thumb" class="form-label">Thumb</label>
+            <input type="thumb" class="form-control" id="series" name="thumb"/>
         </div>
         
         <div class="mb-3">

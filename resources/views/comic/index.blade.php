@@ -15,6 +15,8 @@
             <th scope="col">series</th>
             <th scope="col">sale_date</th>
             <th scope="col">type</th>
+            <th scope="col">action</th>
+
         </tr>
         </thead>
         <tbody>
@@ -28,6 +30,7 @@
             <td>{{$comic->sale_date}}</td>
             <td>{{$comic->type}}</td>
             <td>{{$comic->thumb}}</td>
+            <td><a class="btn btn-primary" href="{{route('comics.show', ['comic'=>$comic->id])}}">Show</a></td>
             
         </tr>
             
