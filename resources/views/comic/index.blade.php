@@ -32,6 +32,7 @@
             <td>
                 <a class="btn btn-primary btn-xs btn-me mb-1" href="{{route('comics.show', ['comic'=>$comic->id])}}">Show</a>
                 <a class="btn btn-warning btn-xs btn-me mb-1" href="{{route('comics.edit', ['comic'=>$comic->id])}}">Edit</a>
+                {{-- <form action="{{route('comics.destroy', ['comic' => $comic])}}" method="POST" onsubmit="return confirm ('Delete?')"> --}}
                 <form action="{{route('comics.destroy', ['comic' => $comic])}}" method="POST">
                     @csrf
                     @method('DELETE')
