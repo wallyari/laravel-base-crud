@@ -5,7 +5,7 @@
 <div class="container">
   <h2>Details for comic:</h2>
   <h3>{{$comic->title}}</h3>
-<img src="{{$comic->thumb}}" alt="{{$comic->title}}">
+<img src="{{$comic->thumb}}" alt="{{$comic->thumb}}">
   <div><strong>Decription:</strong> {{$comic->description}}</div>
   <div><strong>Price:</strong> {{$comic->price}}</div>
   <div><strong>Series:</strong> {{$comic->series}}</div>

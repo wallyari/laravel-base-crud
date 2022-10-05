@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -36,22 +37,24 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+                'thumb' => 'required|max:250|url',
+                'title' => 'required|max:100|min:3',
+                'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
+                'price' => 'required|max:10|min:5',
+                'series' => 'required|max:100|min:4',
+                'description' => 'nullable|max:65535',
+                'sale_date' => 'required',
+            ]
+        );
         $data=$request->all();
         $newComic = new Comic();
-        
-        /*$newComic->title= $data['title'];
-        $newComic->description=$data['description'];
-        $newComic->price=$data['price'];
-        $newComic->series=$data['series'];
-        $newComic->sale_date=$data['sale_date'];
-        $newComic->thumb=$data['thumb'];
-        $newComic->type=$data['type'];*/
-        
         // *Specificare il valore di $fillable nel model.
         $newComic->fill($data);
         $newComic->save();
         return redirect()->route('comics.index');
-        
+
 
     }
 
@@ -95,19 +98,34 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    { 
+        
+        $request->validate(
+            [
+                'thumb' => 'required|max:250|url',
+                'title' => 'required|max:100|min:3',
+                'type' => ['required', Rule::in(['comic book', 'graphic novel'])],
+                'price' => 'required|max:10|min:3',
+                'series' => 'required|max:100|min:4',
+                'description' => 'nullable|max:65535',
+                'sale_date' => 'required',
+            ]
+        );
+
+
+
         $comic= Comic::find($id);
         if($comic){
             $data = $request->all();
             $comic->update($data);
             $comic->save();
-
             //redirect 
             return redirect()->route('comics.index',['comic'=> $comic])->with('status', 'Profile updated!');
 
         }else{
             abort(404);
         }
+        
     }
 
     /**
