@@ -13,9 +13,10 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
-        return view('comic.index',compact ('comics'));
+        $comics = Comic::orderBy('id', 'desc')->get();
+        return view('comic.index', compact('comics'));
     }
+
 
     /**
      * Show the form for creating a new resource.
