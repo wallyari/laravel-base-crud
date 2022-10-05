@@ -103,7 +103,7 @@ class ComicController extends Controller
             $comic->save();
 
             //redirect 
-            return redirect()->route('comics.index',['comic'=> $comic]);
+            return redirect()->route('comics.index',['comic'=> $comic])->with('status', 'Profile updated!');
 
         }else{
             abort(404);
