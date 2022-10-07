@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title', 'Add new Comic')
+@section('title', 'Create new Comic')
 
 @section('content')
 
